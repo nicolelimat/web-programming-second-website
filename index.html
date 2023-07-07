@@ -10,10 +10,10 @@
     <header>
         <h2 class="titulo"><a href="#inicio">Nicole Lima</a></h2>
         <ul class="menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#formacao-academica">Formação Acadêmica</a></li>
-            <li><a href="#interesses">Interesses</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a class="smooth-scroll" href="#inicio">Início</a></li>
+            <li><a class="smooth-scroll" href="#formacao-academica">Formação Acadêmica</a></li>
+            <li><a class="smooth-scroll" href="#interesses">Interesses</a></li>
+            <li><a class="smooth-scroll" href="#contato">Contato</a></li>
         </ul>
     </header>
 
@@ -24,8 +24,44 @@
             <h1>Nicole Lima</h1>
             <p>Oi! Esse é o meu website pessoal, divirta-se!</p>
             <div class="container">
-                <button class="centered-button">Começar</button>
+                <button class="centered-button"><a class="smooth-scroll" href="#pets">Começar</a></button>
             </div>
+        </div>
+        
+        <div id="pets">
+            <h2 class="titulo">Pets</h2>
+            <br>
+            <br>
+            <div class="image-block">
+                <img src="images/pets_pituxo.jpg" alt="" class="default-image">
+                <div class="image-overlay">
+                  <p class="overlay-text">Pituxo</p>
+                </div>
+              </div>
+              <div class="image-block">
+                <img src="images/pets_gato.jpg" alt="" class="default-image">
+                <div class="image-overlay">
+                  <p class="overlay-text">Gato</p>
+                </div>
+              </div>
+              <div class="image-block">
+                <img src="images/pets_cocaina.jpg" alt="" class="default-image">
+                <div class="image-overlay">
+                  <p class="overlay-text">Cocaína</p>
+                </div>
+              </div>
+              <div class="image-block">
+                <img src="images/pets_charlotte.jpg" alt="" class="default-image">
+                <div class="image-overlay">
+                  <p class="overlay-text">Charlotte</p>
+                </div>
+              </div>
+              <div class="image-block">
+                <img src="images/pets_pandora.jpg" alt="" class="default-image">
+                <div class="image-overlay">
+                  <p class="overlay-text">Pandora</p>
+                </div>
+              </div>
         </div>
     </section>
 
@@ -44,26 +80,19 @@
     </section>
 
     <section id="interesses">
-        <div>
+        <div class="conteudo">
             <h1 class="titulo">Passatempos e Interesses Pessoais</h1>
             <p>Um pouquinho sobre meus gostos!</p>
-            <div class="container">
-                <button class="centered-button">Começar</button>
-            </div>
         </div>
         
-        <div>
+        <div class="topicos">
             <ul>
-                <li><a href="#taylorlana">Taylor Swift & Lana Del Rey</a></li>
-                <li><a href="#journal">Journaling</a></li>
-                <li><a href="#leitura">Leitura</a></li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li><a href="#stardew">Stardew Valley</a></li>
-                <li><a href="#violao">Violão</a></li>
-                <li><a href="#caminhada">Caminhada</a></li>
+                <li id="t1"><a class="smooth-scroll" href="#taylorlana">Taylor Swift & Lana Del Rey</a></li>
+                <li id="t2"><a class="smooth-scroll" href="#journal">Journaling</a></li>
+                <li id="t3"><a class="smooth-scroll" href="#leitura">Leitura</a></li>
+                <li id="t4"><a class="smooth-scroll" href="#stardew">Stardew Valley</a></li>
+                <li id="t5"><a class="smooth-scroll" href="#violao">Violão</a></li>
+                <li id="t6"><a class="smooth-scroll" href="#caminhada">Caminhada</a></li>
             </ul>
         </div>
     </section>
@@ -73,9 +102,9 @@
             <div class="conteudo">
                 <h2>Taylor Swift e Lana Del Rey</h2>
                 <p>Gosto de ouvir as composições das duas cantoras, principalmente as da Taylor Swift. Suas letras possuem significados fortes, transmitindo suas mais bonitas emoções e experiências vividas em forma de canções.</p>
-                <div class="container">
+                <!-- <div class="container">
                     <button class="centered-button">Saiba Mais</button>
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -105,9 +134,9 @@
                     <li>A vida invisível de Addie LaRue (lendo atualmente)</li>
                     <li>O príncipe Cruel</li>
                 </ul>
-                <div class="container">
+                <!-- <div class="container">
                     <button class="centered-button">Saiba Mais</button>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -156,6 +185,32 @@
         
     </section>
 
+    <script>
+        // Seleciona todos os links com a classe "smooth-scroll"
+        const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+
+        // Adiciona um evento de clique a cada link
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Impede o comportamento padrão de redirecionamento do link
+                event.preventDefault();
+
+                // Obtém o alvo da rolagem com base no atributo href do link
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                // Calcula a distância do alvo em relação ao topo da página
+                const targetOffset = targetElement.offsetTop;
+
+                // Realiza a rolagem suave para o alvo
+                window.scrollTo({
+                    top: targetOffset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
     
 
     <footer> © 2023 Nicole Lima</footer>
